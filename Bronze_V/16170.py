@@ -1,9 +1,10 @@
 # 오늘의 날짜는? 
 
-from datetime import date, datetime
-from pytz import timezone
+import sys
+import datetime
 
-today = datetime.strftime()
-print(datetime.strftime('%Y'))
-print(datetime.strftime('%m'))
-print(datetime.strftime('%d'))
+time = datetime.datetime.now() + datetime.timedelta(hours=9)
+
+print(time.year)
+print(time.month)
+print(time.day)

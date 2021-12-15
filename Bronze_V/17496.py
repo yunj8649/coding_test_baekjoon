@@ -9,3 +9,5 @@ n, t, c, p = map(int, input().split())
 print(n//t)
 print((n//t)*c)
 print(((n//t)*c)*p)
+
+print((n-1)//t*c*p)

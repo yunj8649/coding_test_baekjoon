@@ -1,5 +1,4 @@
 # 저작권
 
-a, i = map(int, input().split())
-
-print(a*i)
+a,b = map(int,input().split(" "))
+print(a*(b-1)+1)
