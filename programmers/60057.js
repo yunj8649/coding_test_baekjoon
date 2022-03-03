@@ -10,8 +10,11 @@ function sliceStr(num, str) {
             subStrArr.push(sliceStr);    
         } else {
             const prevStr = subStrArr.pop();
+            
             if (prevStr === sliceStr) {
                 eqCnt += 1
+                
+                if (startIdx+num >= str.length && eqCnt > 1) subStrArr.push(eqCnt);
                 subStrArr.push(prevStr);
             } else {
                 if (eqCnt > 1) {
@@ -22,10 +25,12 @@ function sliceStr(num, str) {
                 subStrArr.push(sliceStr);
             }
         }
+        if (num === 6) {
+            console.log('eqCnt :: ', eqCnt)
+            console.log('num :: ', num, ' join :: ', subStrArr.join(''))
+        }
         startIdx += num;
     }
-    
-    console.log('join :: ', subStrArr.join(''), ' num :: ', num)
     
     return subStrArr.join('').length
 }
@@ -34,7 +39,7 @@ function solution(s) {
     var answer = 0;
     const sliceStrNumArr = [];
     
-    for(let i = 0; i< s.length; i++) {
+    for(let i = 0; i < s.length; i++) {
         const num = sliceStr(i+1, s);
         sliceStrNumArr.push(num);
     }
