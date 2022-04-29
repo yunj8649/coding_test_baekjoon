@@ -1,11 +1,7 @@
-arr = []
-
 while(True):
-    a, b = map(int, input().split())
-    if a == 0 and b == 0:
+    try:
+        a, b = map(int, input().split())
+        print(a+b)
+    except:
         break
-    else:
-        arr.append([a,b])
-        
-for item in arr:
-    print(item[0]+item[1])
+        # exit()
